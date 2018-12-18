@@ -1,0 +1,30 @@
+[Y] = klar 
+[] = inte klar 
+
+Bakgrunds bild [Y]
+Platformer bild [Y]
+Spelare bild [Y]
+fysik och collitoner [Y]
+Preloader [Y] src= https://gamedevacademy.org/creating-a-preloading-screen-in-phaser-3/?a=13
+
+Poäng [Y]
+saker som ger dig poäng [Y]
+Se poängen [Y]
+
+Traps[]
+Fiender []
+Fiender kan döda spelare []
+Förlust skärm []
+
+Spelar animationer [Y]
+En camera som följer spelaren [Y]
+Spelaren kan inte se utanför leveln []
+
+Musik []
+Stor level []
+Vinst som tar dig till nästa level []
+Fler levlar []
+
+Power ups/vapen? []
+Bossar/Boss []
+
