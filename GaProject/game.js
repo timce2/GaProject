@@ -209,7 +209,7 @@ function preload ()
 	coins.create(700, 450, 'coin');
 	
 	//skapar spelaren och lägger till fysik 
-	player = this.physics.add.sprite(200, 200, 'player');
+	player = this.physics.add.sprite(100, 350, 'player');
 	player.body.setSize(10, 32, 50, 25);
 	
 	//gör så att spelaren kommer studsa på emot andra pysiska grupper
@@ -302,15 +302,17 @@ function preload ()
 	console.log("function create loaded fine");
 };
 
+
 	function update(time, delta) 
 	{   
 
 	//om "gameOver" är sant så slutar funktionen 
 	if (gameOver)
 	{
-        return;
+		this.scene.restart();
+		return(gameOver=false, points=0);
 	}
-	
+
 	
 	//sätter fart på slime
 	slime.body.velocity.x = -130;
