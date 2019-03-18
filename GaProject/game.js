@@ -39,6 +39,7 @@ var coins;
 var slime;
 var grassBox;
 var spikes;
+//var flag;
 var gameOver = false;
 
 new Phaser.Game(config);
@@ -128,6 +129,7 @@ function preload ()
 	 this.load.spritesheet('slime', 'assets/slime.png', { frameWidth: 32, frameHeight: 32});
 	 this.load.image('grassBox', 'assets/grassBox.png');
 	 this.load.image('spikes', 'assets/spikes.png');
+	 //this.load.image('flag', 'assets/flag.png');
 	 this.load.audio('music1', 'assets/music1.mp3');
 	 
 	 this.load.image('Materials', 'assets/Materials.png');
@@ -199,6 +201,8 @@ function preload ()
 	spikes.create(1382, 484, 'spikes');
 	spikes.create(1414, 484, 'spikes');
 	
+	//flag.create(1032, 484, 'flag');
+
 	//lägger in texten som säger hur många poäng jag har
 	pointText = this.add.text(2, 2, 'points: ' + points, {fontSize: '32px', fill: '#000'});
 	
@@ -221,14 +225,12 @@ function preload ()
 	
 	//lägger till "Slime"
 	slime = this.physics.add.sprite(470,265, 'slime');
-	//slime.this.physics.add.sprite(470,265, 'slime');
-	//slime2 = this.physics.add.sprite(500,265, 'slime');
+	
 	
 	
 	//gör så att spelaren koliderar med platformarna med andra ord spelaren kan inte trilla igenom dom 
 	//och likt spelaren så är det andra grupper som samma sak händer med nedanför
 	this.physics.add.overlap(player, slime, death, null, this);
-	//this.physics.add.overlap(player, slime2, death, null, this);
 	this.physics.add.overlap(player, coins, collectCoins, null, this);
 	this.physics.add.overlap(player, spikes, death, null, this);
 
@@ -236,8 +238,6 @@ function preload ()
 	this.physics.add.collider(coins, platforms);
 	this.physics.add.collider(slime, platforms);
 	this.physics.add.collider(player, slime);
-	//this.physics.add.collider(slime2, platforms);
-	//this.physics.add.collider(player, slime2);
 	this.physics.add.collider(player, spikes);
 	this.physics.add.collider(player, grassBox);
 	
@@ -310,7 +310,7 @@ function preload ()
 	if (gameOver)
 	{
 		this.scene.restart();
-		return(gameOver=false, points=0);
+		return(gameOver=false, points = 0);
 	}
 
 	
